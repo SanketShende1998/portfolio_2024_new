@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import React from "react";
 import { FaRegEye } from "react-icons/fa";
 
 export default function ProjectCard(props) {
@@ -12,10 +11,12 @@ export default function ProjectCard(props) {
             <button className="inline-flex font-semibold items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 border text-white">
               Read more
             </button>
-            <button className="flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 border text-white">
-              <span className="font-semibold">Preview</span>
-              <FaRegEye className="ml-3 mt-1" />
-            </button>
+            <a href={props.link} target="_blank" rel="noopener noreferrer">
+              <button className="flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 border text-white">
+                <span className="font-semibold">Preview</span>
+                <FaRegEye className="ml-3 mt-1" />
+              </button>
+            </a>
           </div>
           <Image
             alt=""
@@ -26,15 +27,30 @@ export default function ProjectCard(props) {
           />
         </div>
         <div className="flex flex-col justify-between pr-4 sm:flex-row">
-          <p className="text-white sm:w-3/5">
-            {props.description}
-          </p>
+          <p className="text-white sm:w-3/5">{props.description}</p>
           <div className="items-end text-right sm:w-2/5 mt-4 lg:mt-0">
             <div className="flex flex-col justify-end">
               <span className="flex justify-end items-center text-sm text-white dark:text-grayText2">
                 <span className="relative flex h-2 w-2 mr-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-700 opacity-60 duration-150"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-600"></span>
+                  <span
+                    className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-60 duration-150 ${
+                      props.status === "Completed"
+                        ? "bg-green-700"
+                        : props.status === "In progress"
+                        ? "bg-yellow-700"
+                        : ""
+                    }`}
+                  ></span>
+                  <span
+                    className={`relative inline-flex h-2 w-2 rounded-full 
+                    ${
+                      props.status === "Completed"
+                        ? "bg-green-600"
+                        : props.status === "In progress"
+                        ? "bg-yellow-600"
+                        : ""
+                    }`}
+                  ></span>
                 </span>
                 {props.status}
               </span>
