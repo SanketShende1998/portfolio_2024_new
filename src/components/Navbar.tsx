@@ -41,10 +41,10 @@ const Navbar = () => {
           </div>
         </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-3 rtl:space-x-reverse">
-          <a href="https://github.com/SanketShende9890" target="__blank" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg hover:bg-gray-600/50 focus:outline-none focus:ring-2 focus:ring-gray-200">
+          <a href="https://github.com/SanketShende9890" target="_blank" rel="noopener noreferrer" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg hover:bg-gray-600/50 focus:outline-none focus:ring-2 focus:ring-gray-200">
             <FaGithub className="text-xl" />
           </a>
-          <a href="https://www.linkedin.com/in/sanket-shende-a8a82a1a0/" target="__blank" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg hover:bg-gray-600/50 focus:outline-none focus:ring-2 focus:ring-gray-200">
+          <a href="https://www.linkedin.com/in/sanket-shende-a8a82a1a0/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg hover:bg-gray-600/50 focus:outline-none focus:ring-2 focus:ring-gray-200">
             <FaLinkedin className="text-xl" />
           </a>
           <button
